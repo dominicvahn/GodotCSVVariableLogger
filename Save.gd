@@ -1,10 +1,10 @@
 extends Node2D
 
 var data = "user://playerdata.csv" # Generic path to user data that always works, playerdata is an arbitrary name for the file we are saving our data to.
-var file2Check = File.new() # Creates a blank file class object we can use to detect if player data already exists or not.
-var doFileExists = file2Check.file_exists(data) # This saves the result of a path check to see if our player data exists or not. We can use this to decide if we are going to create a new CSV or write to and existing one.
+var arbitrary = File.new() # Creates a blank file class object we can use to detect if player data already exists or not.
+var Does_aribtrary_exist = arbitrary.file_exists(data) # This saves the result of a path check to see if our player data exists or not. We can use this to decide if we are going to create a new CSV or write to and existing one.
 func _ready(): # This code executes once the program starts.
-	if doFileExists == true: # Check if the csv already exists or not.
+	if Does_aribtrary_exist == true: # Check if the csv already exists or not.
 		pass # Do nothing if it does exist.
 	else:# If it does not exist, do this.
 		var file = File.new() # create a blank file class we can write data to.  
