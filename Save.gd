@@ -5,7 +5,7 @@ var file2Check = File.new() # Creates a blank file class object we can use to de
 var doFileExists = file2Check.file_exists(data) # This saves the result of a path check to see if our player data exists or not. We can use this to decide if we are going to create a new CSV or write to and existing one.
 func _ready(): # This code executes once the program starts.
 	if doFileExists == true: # Check if the csv already exists or not.
-		pass # Do nothing it it does exist.
+		pass # Do nothing if it does exist.
 	else:# If it does not exist, do this.
 		var file = File.new() # create a blank file class we can write data to.  
 		file.open(data, File.WRITE) # File.WRITE specifically creates a file if it does not exist.
@@ -21,8 +21,6 @@ func _ready(): # This code executes once the program starts.
 func _write(): # This is our function for updating our data
 	var file = File.new() 
 	file.open(data, File.READ_WRITE) # File.Read_Write specifically reads our file first so that it does not overwrite our data. 
-	#var headers = ["id", "credits", "winnings", "rating", "trial"] # Possibly legacy code!?
-	#file.store_csv_line(headers, ",") # See above.
 	
 	file.seek_end() # Makes sure its on a new line to write our data, but there may be a better way of doing this for your project. 
 	var sv = [Variables.playerid, Variables.credits, Variables.winnings, Variables.rating, Variables.trial]
